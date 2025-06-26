@@ -17,5 +17,25 @@ public class AccountServices {
 		accRepo.save(obj);
 		return "success";
 	}
+	
+	public String deleteAccount(int accno)
+	{
+		String status="";
+		Account obj=accRepo.findByAccno(accno);
+		if(obj!=null)
+		{
+		System.out.println(obj.getAccnm());
+		System.out.println(obj.getBalance());
+		accRepo.delete(obj);
+		status="success";
+		}
+		else
+		{
+			System.out.println("not found");
+			status="failed";
+		}
+
+		return status;
+	}
 
 }

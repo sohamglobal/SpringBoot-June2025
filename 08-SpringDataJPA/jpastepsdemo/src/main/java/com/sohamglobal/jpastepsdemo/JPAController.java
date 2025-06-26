@@ -28,5 +28,20 @@ public class JPAController {
 		m.addAttribute("status",status);
 		return "ActivityStatus.jsp";
 	}
+	
+	@GetMapping("/close")
+	public String close()
+	{
+		return "CloseAccountForm.html";
+	}
+	
+	@PostMapping("/closeacc")
+	public String closeAcc(int accno,Model m)
+	{
+		String status;
+		status=accServ.deleteAccount(accno);
+		m.addAttribute("status", status);
+		return "ActivityStatus.jsp";
+	}
 
 }

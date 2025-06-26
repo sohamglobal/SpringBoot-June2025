@@ -7,6 +7,7 @@ import com.sohamglobal.jpastepsdemo.entities.Account;
 
 @Repository
 public interface AccountRepository extends JpaRepository<Account, Integer> {
-	
+
+	Account findByAccno(int accno); 
 
 }
