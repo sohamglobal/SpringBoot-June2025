@@ -36,7 +36,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto text-center">
-                <li class="nav-item"><a class="nav-link text-white" href="#">Deposit</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="deposit">Deposit</a></li>
                 <li class="nav-item"><a class="nav-link text-white" href="#">Withdraw</a></li>
                 <li class="nav-item"><a class="nav-link text-white" href="#">Transfer</a></li>
                 <li class="nav-item"><a class="nav-link text-white" href="#">Search</a></li>

@@ -25,6 +25,7 @@ public class JPAController {
 	public String addAccount(Account obj,Model m)
 	{
 		String status=accServ.addNewAccount(obj);
+		m.addAttribute("msg", "New account creation...");
 		m.addAttribute("status",status);
 		return "ActivityStatus.jsp";
 	}
@@ -40,7 +41,23 @@ public class JPAController {
 	{
 		String status;
 		status=accServ.deleteAccount(accno);
+		m.addAttribute("msg", "Account closing...");
 		m.addAttribute("status", status);
+		return "ActivityStatus.jsp";
+	}
+	
+	@GetMapping("/deposit")
+	public String deposit()
+	{
+		return "DepositForm.html";
+	}
+	
+	@PostMapping("/depoamt")
+	public String depositAmount(int accno,float amount,Model m)
+	{
+		String stat=accServ.depoAmount(accno, amount);
+		m.addAttribute("status", stat);
+		m.addAttribute("msg", "Deposit amount...");
 		return "ActivityStatus.jsp";
 	}
 

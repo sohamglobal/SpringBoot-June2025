@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>Opening new account...</h1>
+<h1>${msg}</h1>
 <hr>
 Status : ${status}
 </body>

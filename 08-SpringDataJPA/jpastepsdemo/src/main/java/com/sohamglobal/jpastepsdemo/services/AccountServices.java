@@ -14,8 +14,17 @@ public class AccountServices {
 	
 	public String addNewAccount(Account obj)
 	{
+		String status;
+		try
+		{
 		accRepo.save(obj);
-		return "success";
+		status="success";
+		}
+		catch(Exception e)
+		{
+			status="failed";
+		}
+		return status;
 	}
 	
 	public String deleteAccount(int accno)
@@ -35,6 +44,26 @@ public class AccountServices {
 			status="failed";
 		}
 
+		return status;
+	}
+	
+	public String depoAmount(int no,float amt)
+	{
+		Account obj=accRepo.findByAccno(no);
+		String status;
+		
+		if(obj!=null)
+		{
+			System.out.println(obj.getBalance());
+			obj.setBalance(obj.getBalance()+amt);
+			System.out.println(obj.getBalance());
+			accRepo.save(obj);
+			status="success";
+		}
+		else
+		{
+			status="failed";
+		}
 		return status;
 	}
 
