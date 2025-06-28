@@ -60,5 +60,19 @@ public class JPAController {
 		m.addAttribute("msg", "Deposit amount...");
 		return "ActivityStatus.jsp";
 	}
+	
+	@GetMapping("/search")
+	public String search()
+	{
+		return "Search.html";
+	}
+	
+	@PostMapping("/searchno")
+	public String searchNumber(int accno,Model m)
+	{
+		Account obj=accServ.searchOnNumber(accno);
+		m.addAttribute("data", obj);
+		return "SearchNumberResult.jsp";
+	}
 
 }

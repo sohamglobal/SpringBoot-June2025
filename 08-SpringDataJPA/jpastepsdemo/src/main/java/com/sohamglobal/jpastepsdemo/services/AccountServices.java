@@ -66,5 +66,19 @@ public class AccountServices {
 		}
 		return status;
 	}
+	
+	public Account searchOnNumber(int accno)
+	{
+		Account obj=accRepo.findByAccno(accno);
+		if(obj==null)
+		{
+			obj=new Account();
+			obj.setAccno(accno);
+			obj.setAccnm("Not found");
+			obj.setAcctype("NA");
+			obj.setBalance(0);
+		}
+		return obj;
+	}
 
 }

@@ -39,7 +39,7 @@
                 <li class="nav-item"><a class="nav-link text-white" href="deposit">Deposit</a></li>
                 <li class="nav-item"><a class="nav-link text-white" href="#">Withdraw</a></li>
                 <li class="nav-item"><a class="nav-link text-white" href="#">Transfer</a></li>
-                <li class="nav-item"><a class="nav-link text-white" href="#">Search</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="search">Search</a></li>
                 <li class="nav-item"><a class="nav-link text-white" href="#">Report</a></li>
                 <li class="nav-item"><a class="nav-link text-white" href="close">Close Account</a></li>
             </ul>
