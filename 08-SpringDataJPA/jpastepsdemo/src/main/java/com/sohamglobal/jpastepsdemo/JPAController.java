@@ -1,5 +1,7 @@
 package com.sohamglobal.jpastepsdemo;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -73,6 +75,14 @@ public class JPAController {
 		Account obj=accServ.searchOnNumber(accno);
 		m.addAttribute("data", obj);
 		return "SearchNumberResult.jsp";
+	}
+	
+	@GetMapping("/report")
+	public String showAccountReport(Model m)
+	{
+		List<Account> list=accServ.getAllAccounts();
+		m.addAttribute("acclist", list);
+		return "AccountsReport.jsp";
 	}
 
 }

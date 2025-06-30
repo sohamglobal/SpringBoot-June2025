@@ -1,5 +1,7 @@
 package com.sohamglobal.jpastepsdemo.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -79,6 +81,12 @@ public class AccountServices {
 			obj.setBalance(0);
 		}
 		return obj;
+	}
+	
+	public List<Account> getAllAccounts()
+	{
+		List<Account> list= accRepo.findAll();
+		return list;
 	}
 
 }
