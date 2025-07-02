@@ -19,5 +19,17 @@ public class StudentServices {
 		List<Student> list=studRepo.findAll();
 		return list;
 	}
+	
+	public List<Student> searchOnCourse(String course)
+	{
+		List<Student> list=studRepo.findByCourse(course);
+		return list;
+	}
+	
+	public List<Student> searchOnRollnoRange(int min,int max)
+	{
+		List<Student> list=studRepo.findStudentsInRollnoRange(min,max);
+		return list;
+	}
 
 }

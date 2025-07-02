@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>All students Report</h1>
+<h1>Students Report</h1>
 <hr>
 
 <table>

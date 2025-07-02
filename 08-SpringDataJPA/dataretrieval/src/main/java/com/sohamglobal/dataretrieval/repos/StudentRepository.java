@@ -12,6 +12,24 @@ import com.sohamglobal.dataretrieval.entities.Student;
 @Repository
 public interface StudentRepository extends JpaRepository<Student, Integer> {
 
-	@Query("select s from Student s where s.course= :cnm")
-	List<Student> findByCourse(@Param("cnm") String cnm);
+	//Derived Query method
+	Student findByRollno(int rollno);
+	List<Student> findByCourse(String course);
+	List<Student> findByRollnoGreaterThan(int value);
+	
+	//Custom queries
+	@Query("select s from Student s where s.rollno between :min and :max")
+	List<Student> findStudentsInRollnoRange(@Param("min") int min,@Param("max") int max);
+	
+	@Query("SELECT s FROM Student s WHERE s.studnm LIKE :prefix%")
+	List<Student> findByNameStartingWith(@Param("prefix") String prefix);
+	
+	@Query("SELECT COUNT(s) FROM Student s WHERE s.course = :course")
+	long countByCourse(@Param("course") String course);
+
+	@Query("SELECT s FROM Student s ORDER BY s.studnm DESC")
+	List<Student> findAllOrderByName();
+
+	
+	
 }
