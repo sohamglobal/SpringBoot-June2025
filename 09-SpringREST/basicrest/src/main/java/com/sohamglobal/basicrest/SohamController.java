@@ -13,12 +13,14 @@ import com.sohamglobal.basicrest.models.User;
 @RequestMapping("/soham/api")
 public class SohamController {
 	
+	//calling -> http://localhost:8080/soham/api/test
 	@GetMapping("/test")
 	public String test()
 	{
 		return "first rest tested ok";
 	}
 	
+	//calling -> http://localhost:8080/soham/api/oneuser
 	@GetMapping("/oneuser")
 	public User getOneUser()
 	{
@@ -32,6 +34,7 @@ public class SohamController {
 		return obj;
 	}
 	
+	//calling -> http://localhost:8080/soham/api/userlist
 	@GetMapping("/userlist")
 	public List<User> getUserList()
 	{
