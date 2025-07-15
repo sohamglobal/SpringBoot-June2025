@@ -49,5 +49,11 @@ public class BankController {
 	{
 		return accServices.depositAmt(accno, amount);
 	}
+	
+	@PutMapping("/acc/transfer")
+	public String transfer(int fromacc,int toacc,float amount)
+	{
+		return accServices.transfer(fromacc, toacc, amount);
+	}
 
 }
